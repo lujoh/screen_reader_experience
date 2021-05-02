@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Accessible Example - Web Accessibility Experiment</title>
         <meta name="description" content="This is the good example for an interactive experience to try out how different HTML components work with a screen reader.">
+        <link rel="stylesheet" type="text/css" href="access.css">
     </head>
     <body>
         <header>
@@ -13,13 +14,14 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Back to the introduction</a></li>
-                    <li><button class="submenu" type="button" aria-label="hover or tab to open submenu" onclick="toggle_menu(this, 'submenu)" aria-expanded="false">Submenu with link to inaccessible example</button>
-                        <ul class="dropdown">
+                    <li><button class="submenu" type="button" aria-label="hit enter to open or close submenu" onclick="toggle_menu(this, 'submenu)" aria-expanded="false">Submenu with link to inaccessible example</button>
+                        <ul class="dropdown" id="submenu">
                             <li><a href="bad.html">Inaccessible example</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </header>
+        <script src="access.js"></script>
     </body>
 </html>
