@@ -39,9 +39,6 @@
                 <p>
                     Alt tags, labels and ARIA-labels are all ways to give audible labels to items, that may or may not be clear to visual users. They should be used to clarify items that are important to understanding what is going on. Alt tags are mainly used to provide alternative text to images. The text in the alt tags should primarily be useful for users instead of mainly being descriptive. For example if a search button has an image of a magnifying glass and no text inside it the alt tag should be "search" or something similar instead of "image of a magnifying glass". That way users will hear the function of the image, instead of a useless description. Images that are purely decoration and do not add any information to the website can be left with empty alt tags so that screen readers ignore them. The image above is an example of this. If these kinds of images are described in detail, it can be completely out of context and confusing for anybody listening. If an image does show relevant content or add any information that isn't given in the text the information should be provided in the alt text. On this page the alt text should help you get the information you need.
                 </p>
-                <p>
-                    Labels are used within forms to describe which input is related to what. They are useful for both sighted and nonsighted users to understand what different form fields mean and should usually be visually placed near the field that they are describing. Labels should always be related to the field that they are describing using the "for" attribute in the HTML. On this page the form should be well labeled so that you know how to fill in the form.
-                </p>
                 <form name="accessibility_support" onsubmit="form_alert()" aria-labelledby="formlabel">
                     <h4 id="formlabel">Fill in this form if you support web accessibility!</h4>
                     <label for="name">Name</label>
@@ -53,6 +50,10 @@
                     <button type="submit" id="submit">Submit to show your support</button>
                 </form>
                 <p id="formresult"></p>
+                <p>
+                    Labels are used within forms to describe which input is related to what. They are useful for both sighted and nonsighted users to understand what different form fields mean and should usually be visually placed near the field that they are describing. Labels should always be related to the field that they are describing using the "for" attribute in the HTML. On this page the form should be well labeled so that you know how to fill in the form.
+                </p>
+                <img src="images/good_form.png" alt="The code for the form on this page shows the form labelled using the ARIA labelledby attribute. The text input has a label with the text 'name' which has an autocomplete attribute and the checkbox input has a label with the words 'I support accessibility'. The submit busson has useful text inside it." width="500">
                 <p>
                     ARIA-attributes are specific accessibility attributes that can help describe different HTML elements to screen readers and other technology. There are many different ARIA-attributes that have different functions, but some of the main ones are ARIA-labels and ARIA-roles. They can be used to label items that aren't supported by the alt tags and labels and they can be used to explain additional functionality. For example if there is a section that can be expanded and ARIA-tag could describe if it is currently expanded or not. On this page there is an ARIA-attribute in the navigation called ARIA-expanded, which explains if the submenu is expanded or not. This attribute changes values using JavaScript when the button to expand the submenu is clicked.
                 </p>
