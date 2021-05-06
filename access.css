@@ -4,6 +4,6 @@
 .dropdown{
     display:none;
 }
-.open{
+.dropdown.open{
     display:block;
 }

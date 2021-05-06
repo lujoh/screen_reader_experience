@@ -9,13 +9,13 @@
     </head>
     <body>
         <div class="header">
-            <h2>Web Accessibility Experiment</h2>
-            <h3>Inaccessible Example</h3>
+            <h2 class="mainheading">Web Accessibility Experiment</h2>
+            <h3 class="subheading">Inaccessible Example</h3>
             <div class="nav">
                 <ul>
                     <li><a href="index.html">Back to the introduction</a></li>
                     <li>Submenu to the good example page
-                        <ul>
+                        <ul class="dropdown">
                             <li><a href="good.html">link</a></li>
                             <li><a href="good.html">How do you get to this menu if you can't hover?</a></li>
                             <li><a href="index.html">Good link titles are nice</a></li>
@@ -23,6 +23,30 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="main">
+            <div class="article">
+                <p class="subheading"><b>Introduction</b></p>
+                <p>This is the inaccessible example of a website. You will notice that the visual look of the website is very similar to the accessible example. A lot of the text on the pages will also be very similar to keep the focus on the differences in accessibility. The differences are in the underlying code of the website and will become obvious if you start exploring the website using the screen reader. In this example there will be some areas that are difficult to access with the screen reader and keyboard. There will be some things that aren't labeled well and some areas where you won't be able to get the information you need to use the website.</p>
+            </div>
+            <div class="article">
+                <h5 class="subheading">Semantic HTML Elements</h5>
+                <p>
+                    Using a semantic HTML element means that the HTML element you use properly describes what the content inside the element is. To be a good semantic element in any situation, an element needs to be descriptive enough to be useful and the content needs to fit the description. If you use a semantic element in the wrong context it is no longer useful. Semantic elements help screen reader users navigate the content more easily. In this inaccessible example the structure of the website is mostly done using the "div" tag, which isn't very descriptive. It also uses the "nav" tag in a place where it doesn't fit, which makes the page more confusing to navigate if you can't see what's going on. In the accessible example the structure is made using the "header", "nav", "main" and "article" tags. Using headings from "h1" to "h6" in the right order, starting from the beginning also makes the page easier to navigate. One quick way to get an idea of the structure and content of a page is to check out all the headings when you first access a page.
+                </p>
+            </div>
+            <nav class="article">
+                <h3 class="subheading">Alt tags, Labels and ARIA-attributes</h3>
+                <p>
+                    Alt tags, labels and ARIA-labels are all ways to give audible labels to items, that may or may not be clear to visual users. They should be used to clarify items that are important to understanding what is going on. Alt tags are mainly used to provide alternative text to images. The text in the alt tags should primarily be useful for users instead of mainly being descriptive. For example if a search button has an image of a magnifying glass and no text inside it the alt tag should be "search" or something similar instead of "image of a magnifying glass". That way users will hear the function of the image, instead of a useless description. Images that are purely decoration and do not add any information to the website can be left with empty alt tags so that screen readers ignore them. If these kinds of images are described in detail, it can be completely out of context and confusing for anybody listening. If an image does show relevant content or add any information that isn't given in the text the information should be provided in the alt text. On this page you will find examples of alt text in places where it shouldn't be and missing alt text where it is needed.
+                </p>
+                <h3 class="paragraph">
+                    Labels are used within forms to describe which input is related to what. They are useful for both sighted and nonsighted users to understand what different form fields mean and should usually be visually placed near the field that they are describing. Labels should always be related to the field that they are describing using the "for" attribute in the HTML. On this page You will find that some of the form elements are labeled visually, but not within the code, so that it doesn't work well in the screen reader.
+                </h3>
+                <p>
+                    ARIA-attributes are specific accessibility attributes that can help describe different HTML elements to screen readers and other technology. There are many different ARIA-attributes that have different functions, but some of the main ones are ARIA-labels and ARIA-roles. They can be used to label items that aren't supported by the alt tags and labels and they can be used to explain additional functionality. For example if there is a section that can be expanded and ARIA-tag could describe if it is currently expanded or not. This page doesn't use any ARIA-attributes, but you will find some in the accessible example page.
+                </p>
+            </nav>
         </div>
         <script src="access.js"></script>
     </body>
