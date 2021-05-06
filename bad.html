@@ -37,9 +37,21 @@
             </div>
             <nav class="article">
                 <h3 class="subheading">Alt tags, Labels and ARIA-attributes</h3>
+                <img src="images/decoration.jpg" width="500" alt="In this purely decorative picture you can see a bearded dragon sitting on a cushion in front of a window. The sun is shining through the window and the bearded dragon has its mouth wide open in a cheerful expression. There are blue-green curtains with a flower pattern in the background of the picture. I don't know how this relates to the topic of the website either, but I described the picture in an alt tag, so it's good right?">
                 <p>
                     Alt tags, labels and ARIA-labels are all ways to give audible labels to items, that may or may not be clear to visual users. They should be used to clarify items that are important to understanding what is going on. Alt tags are mainly used to provide alternative text to images. The text in the alt tags should primarily be useful for users instead of mainly being descriptive. For example if a search button has an image of a magnifying glass and no text inside it the alt tag should be "search" or something similar instead of "image of a magnifying glass". That way users will hear the function of the image, instead of a useless description. Images that are purely decoration and do not add any information to the website can be left with empty alt tags so that screen readers ignore them. If these kinds of images are described in detail, it can be completely out of context and confusing for anybody listening. If an image does show relevant content or add any information that isn't given in the text the information should be provided in the alt text. On this page you will find examples of alt text in places where it shouldn't be and missing alt text where it is needed.
                 </p>
+                <form name="accessibility_support" onsubmit="form_alert()">
+                    <h4>Fill in this form if you support web accessibility!</h4>
+                    <span>Name</span>
+                    <input type="text" id="name" name="name">
+                    <br>
+                    <input type="checkbox" id="support" name="support">
+                    <label for="name">I support accessibility</label>
+                    <br>
+                    <button type="submit" id="submit">Submit to show your support</button>
+                </form>
+                <p id="formresult"></p>
                 <h3 class="paragraph">
                     Labels are used within forms to describe which input is related to what. They are useful for both sighted and nonsighted users to understand what different form fields mean and should usually be visually placed near the field that they are describing. Labels should always be related to the field that they are describing using the "for" attribute in the HTML. On this page You will find that some of the form elements are labeled visually, but not within the code, so that it doesn't work well in the screen reader.
                 </h3>

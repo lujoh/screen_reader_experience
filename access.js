@@ -11,3 +11,8 @@ function toggle_menu(button, menuID) {
         button.setAttribute("aria-expanded", "false");
     }
 }
+
+//function to show an alert when the form is submitted
+function form_alert() {
+    document.getElementById('formresult').innerHTML = "Thank you for your support!";
+}
