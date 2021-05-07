@@ -32,11 +32,17 @@ button{
     background-color:#ff9999;
     border-color:#b30000;
 }
+.citation{
+    margin-left:2em;text-indent:-2em;
+}
 /*menu styles*/
 .dropdown{
     display:none;
 }
 .dropdown.open{
+    display:block;
+}
+.hover:hover .dropdown, .dropdown:hover{
     display:block;
 }
 /*invisibility mode style*/
