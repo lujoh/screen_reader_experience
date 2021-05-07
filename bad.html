@@ -8,9 +8,12 @@
         <link rel="stylesheet" type="text/css" href="access.css">
     </head>
     <body>
+        <button id="invisibility_btn" type="button" aria-pressed="false" onclick="invisible_mode()">Click to explore the page in invisible mode.</button>
+        <div id="visible">
         <div class="header">
             <h2 class="mainheading">Web Accessibility Experiment</h2>
-            <h3 class="subheading">Inaccessible Example</h3>
+            <h3 class="subheading">Inaccessible Example</h3><br>
+            
             <div class="nav">
                 <ul>
                     <li><a href="index.html">Back to the introduction</a></li>
@@ -41,7 +44,7 @@
                 <p>
                     Alt tags, labels and ARIA-labels are all ways to give audible labels to items, that may or may not be clear to visual users. They should be used to clarify items that are important to understanding what is going on. Alt tags are mainly used to provide alternative text to images. The text in the alt tags should primarily be useful for users instead of mainly being descriptive. For example if a search button has an image of a magnifying glass and no text inside it the alt tag should be "search" or something similar instead of "image of a magnifying glass". That way users will hear the function of the image, instead of a useless description. Images that are purely decoration and do not add any information to the website can be left with empty alt tags so that screen readers ignore them. If these kinds of images are described in detail, it can be completely out of context and confusing for anybody listening. If an image does show relevant content or add any information that isn't given in the text the information should be provided in the alt text. On this page you will find examples of alt text in places where it shouldn't be and missing alt text where it is needed.
                 </p>
-                <form name="accessibility_support" onsubmit="form_alert()">
+                <form name="accessibility_support" onsubmit=" event.preventDefault(); form_alert()">
                     <h4>Fill in this form if you support web accessibility!</h4>
                     <span>Name</span>
                     <input type="text" id="name" name="name">
@@ -49,7 +52,7 @@
                     <input type="checkbox" id="support" name="support">
                     <label for="name">I support accessibility</label>
                     <br>
-                    <button type="submit" id="submit">Submit to show your support</button>
+                    <button type="submit" id="submit">Click here!</button>
                 </form>
                 <p id="formresult"></p>
                 <h3 class="paragraph">
@@ -72,6 +75,7 @@
                 <a href="good.html"><img src="images/check.png" alt="green check mark" width="50"></a> Accessible example page 
             </div>
             
+        </div>
         </div>
         <script src="access.js"></script>
     </body>

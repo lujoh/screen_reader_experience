@@ -21,6 +21,17 @@
     font-size:16px;
     font-weight:400;
 }
+button{
+    margin:2px;
+    padding:5px;
+    background-color:#f2f2f2;
+    color:black;
+    border:solid black 1px;
+}
+#invisibility_btn{
+    background-color:#ff9999;
+    border-color:#b30000;
+}
 /*menu styles*/
 .dropdown{
     display:none;
@@ -28,3 +39,15 @@
 .dropdown.open{
     display:block;
 }
+/*invisibility mode style*/
+ .invisible {
+    border: 0;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip; rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; 
+} 

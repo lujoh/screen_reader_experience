@@ -8,13 +8,16 @@
         <link rel="stylesheet" type="text/css" href="access.css">
     </head>
     <body>
+        <button id="invisibility_btn" type="button" aria-pressed="false" onclick="invisible_mode()">Click to explore the page in invisible mode</button>
+        <div id="visible">
         <header>
             <h1>Web Accessibility Experiment</h1>
-            <h2>Accessible Example</h2>
+            <h2>Accessible Example</h2><br>
+            
             <nav>
                 <ul>
                     <li><a href="index.html">Back to the introduction</a></li>
-                    <li><button class="submenu" type="button" aria-label="hit enter to open or close submenu" onclick="toggle_menu(this, 'submenu')" aria-expanded="false">Submenu with link to inaccessible example</button>
+                    <li><button class="submenu" type="button" aria-haspopup="true" aria-label="hit enter to open or close submenu" onclick="toggle_menu(this, 'submenu')" aria-expanded="false">Submenu with link to inaccessible example</button>
                         <ul class="dropdown" id="submenu">
                             <li><a href="bad.html">Inaccessible example</a></li>
                         </ul>
@@ -30,7 +33,7 @@
             <article>
                 <h3>Semantic HTML Elements</h3>
                 <p>
-                    Using a semantic HTML element means that the HTML element you use properly describes what the content inside the element is. To be a good semantic element in any situation, an element needs to be descriptive enough to be useful and the content needs to fit the description. If you use a semantic element in the wrong context it is no longer useful. Semantic elements help screen reader users navigate the content more easily. In the inaccessible example the structure of the website is mostly done using the "div" tag, which isn't very descriptive. It also uses the "nav" tag in a place where it doesn't fit, which makes the page more confusing to navigate if you can't see what's going on.  In contrast, on this page the structure is made using the "header", "nav", "main" and "article" tags. Using headings from "h1" to "h6" in the right order, starting from the beginning also makes the page easier to navigate. One quick way to get an idea of the structure and content of a page is to check out all the headings when you first access a page.
+                    Using a semantic HTML element means that the HTML element you use properly describes what the content inside the element is. To be a good semantic element in any situation, an element needs to be descriptive enough to be useful and the content needs to fit the description. If you use a semantic element in the wrong context it is no longer useful. Semantic elements help screen reader users navigate the content more easily. In the inaccessible example the structure of the website is mostly done using the div tag, which isn't very descriptive. It also uses the nav tag in a place where it doesn't fit, which makes the page more confusing to navigate if you can't see what's going on.  In contrast, on this page the structure is made using the header, nav, main and article tags. Using headings from h1 to h6 in the right order, starting from the beginning also makes the page easier to navigate. One quick way to get an idea of the structure and content of a page is to check out all the headings when you first access a page.
                 </p>
             </article>
             <article>
@@ -39,7 +42,7 @@
                 <p>
                     Alt tags, labels and ARIA-labels are all ways to give audible labels to items, that may or may not be clear to visual users. They should be used to clarify items that are important to understanding what is going on. Alt tags are mainly used to provide alternative text to images. The text in the alt tags should primarily be useful for users instead of mainly being descriptive. For example if a search button has an image of a magnifying glass and no text inside it the alt tag should be "search" or something similar instead of "image of a magnifying glass". That way users will hear the function of the image, instead of a useless description. Images that are purely decoration and do not add any information to the website can be left with empty alt tags so that screen readers ignore them. The image above is an example of this. If these kinds of images are described in detail, it can be completely out of context and confusing for anybody listening. If an image does show relevant content or add any information that isn't given in the text the information should be provided in the alt text. On this page the alt text should help you get the information you need.
                 </p>
-                <form name="accessibility_support" onsubmit="form_alert()" aria-labelledby="formlabel">
+                <form name="accessibility_support" onsubmit="event.preventDefault(); form_alert()" aria-labelledby="formlabel">
                     <h4 id="formlabel">Fill in this form if you support web accessibility!</h4>
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" autocomplete="name">
@@ -47,11 +50,11 @@
                     <input type="checkbox" id="support" name="support">
                     <label for="support">I support accessibility</label>
                     <br>
-                    <button type="submit" id="submit">Submit to show your support</button>
+                    <button type="submit" id="submit" aria-pressed="false">Submit to show your support</button>
                 </form>
                 <p id="formresult"></p>
                 <p>
-                    Labels are used within forms to describe which input is related to what. They are useful for both sighted and nonsighted users to understand what different form fields mean and should usually be visually placed near the field that they are describing. Labels should always be related to the field that they are describing using the "for" attribute in the HTML. On this page the form should be well labeled so that you know how to fill in the form.
+                    Labels are used within forms to describe which input is related to what. They are useful for both sighted and nonsighted users to understand what different form fields mean and should usually be visually placed near the field that they are describing. Labels should always be related to the field that they are describing using the for attribute in the HTML. On this page the form should be well labeled so that you know how to fill in the form.
                 </p>
                 <img src="images/good_form.png" alt="The code for the form on this page shows the form labelled using the ARIA labelledby attribute. The text input has a label with the text 'name' which has an autocomplete attribute and the checkbox input has a label with the words 'I support accessibility'. The submit busson has useful text inside it." width="500">
                 <p>
@@ -75,6 +78,7 @@
             </ul>
 
         </footer>
+        </div>
         <script src="access.js"></script>
     </body>
 </html>
